@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DescriptionPokemon" representedClassName="DescriptionPokemon" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="types" optional="YES" attributeType="String"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="imagePokemon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImagePokemon" inverseName="descriptionPokemon" inverseEntity="ImagePokemon"/>
+        <relationship name="urlPokemon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UrlPokemon" inverseName="descriptionPokemon" inverseEntity="UrlPokemon"/>
+    </entity>
+    <entity name="ImagePokemon" representedClassName="ImagePokemon" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <relationship name="descriptionPokemon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DescriptionPokemon" inverseName="imagePokemon" inverseEntity="DescriptionPokemon"/>
+    </entity>
+    <entity name="UrlPokemon" representedClassName="UrlPokemon" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="descriptionPokemon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DescriptionPokemon" inverseName="urlPokemon" inverseEntity="DescriptionPokemon"/>
+    </entity>
 </model>

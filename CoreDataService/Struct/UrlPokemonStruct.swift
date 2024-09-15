@@ -1,8 +1,11 @@
-//
-//  UrlPokemonStruct.swift
-//  Pokemons
-//
-//  Created by НИКИТА ПЕСНЯК on 15.09.24.
-//
+struct UrlPokemonResponse: Decodable {
+    var count: Int
+    var next: String?
+    var previous: String?
+    var results: [UrlPokemonStruct]
+}
 
-import Foundation
+struct UrlPokemonStruct: Decodable{
+    var name: String
+    var url: String
+}
