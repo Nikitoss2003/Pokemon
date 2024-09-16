@@ -48,6 +48,16 @@ final class PokemonsViewController: UIViewController {
                 cell.configure(with: pokemon)
             }
             .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(Pokemon.self)
+            .subscribe(onNext: { [weak self] selectedPokemon in
+                guard let self = self else { return }
+                self.viewModel.cordinatorDecription(pokemon: selectedPokemon)
+            })
+            .disposed(by: disposeBag)
+
+        
+        
         tableView.rx.contentOffset
             .flatMapLatest { [weak self] _ -> Observable<Bool> in
                 guard let self = self else { return Observable.empty() }

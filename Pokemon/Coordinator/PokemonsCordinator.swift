@@ -2,24 +2,22 @@ import UIKit
 
 // MARK: - CoordinatorProtocol
 protocol PokemonCoordinatorProtocol {
-    func popViewController()
+    func showPokemonDetail(pokemon: Pokemon)
 
 }
 
 // MARK: - Coordinator
 final class PokemonCoordinator: PokemonCoordinatorProtocol {
     weak var viewController: UIViewController?
-    
-    private enum Constants {
-        static let errorPopupTitle: String = "Error"
-        static let errorPopupMessage: String = "Error has occured"
-        static let popupButtonTitle: String = "OK"
+    func showPokemonDetail(pokemon: Pokemon) {
+        let detailViewController = PokemonDetailFactory.make(pokemon: pokemon)
+        viewController?.navigationController?.pushViewController(detailViewController, animated: true)
     }
     
-    func popViewController() {
-        viewController?.navigationController?.popViewController(animated: true)
-    }
+    
+    
     
     
     
 }
+
