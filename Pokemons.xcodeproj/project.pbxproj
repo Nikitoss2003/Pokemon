@@ -36,6 +36,9 @@
 		441E22CC2C982C0E0081192C /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22CB2C982C0E0081192C /* NetworkMonitor.swift */; };
 		441E22CF2C9834B30081192C /* ImagePokemon+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22CD2C9834B30081192C /* ImagePokemon+CoreDataClass.swift */; };
 		441E22D02C9834B30081192C /* ImagePokemon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22CE2C9834B30081192C /* ImagePokemon+CoreDataProperties.swift */; };
+		441E22D82C9875400081192C /* DecriptionPokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22D72C9875400081192C /* DecriptionPokemonView.swift */; };
+		441E22DA2C9875490081192C /* DecriptionPokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22D92C9875490081192C /* DecriptionPokemonModel.swift */; };
+		441E22DE2C9875630081192C /* DecriptionPokemonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22DD2C9875630081192C /* DecriptionPokemonFactory.swift */; };
 		556AD3DD1E74A9272290AECF /* Pods_Pokemons_PokemonsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD31380AC10FE0C8C78932E /* Pods_Pokemons_PokemonsUITests.framework */; };
 		F5FE47517B8DEC1D14F3B8CD /* Pods_PokemonsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0900BB2D19D902EB0EF435C5 /* Pods_PokemonsTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +96,9 @@
 		441E22CB2C982C0E0081192C /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		441E22CD2C9834B30081192C /* ImagePokemon+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagePokemon+CoreDataClass.swift"; sourceTree = "<group>"; };
 		441E22CE2C9834B30081192C /* ImagePokemon+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagePokemon+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		441E22D72C9875400081192C /* DecriptionPokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecriptionPokemonView.swift; sourceTree = "<group>"; };
+		441E22D92C9875490081192C /* DecriptionPokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecriptionPokemonModel.swift; sourceTree = "<group>"; };
+		441E22DD2C9875630081192C /* DecriptionPokemonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecriptionPokemonFactory.swift; sourceTree = "<group>"; };
 		6748B3BF8603E1296BC767E3 /* Pods-PokemonsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonsTests.release.xcconfig"; path = "Target Support Files/Pods-PokemonsTests/Pods-PokemonsTests.release.xcconfig"; sourceTree = "<group>"; };
 		74AE40128AE59953C37D6BCE /* Pods-Pokemons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokemons.debug.xcconfig"; path = "Target Support Files/Pods-Pokemons/Pods-Pokemons.debug.xcconfig"; sourceTree = "<group>"; };
 		7F865607940224B469F4198F /* Pods-Pokemons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokemons.release.xcconfig"; path = "Target Support Files/Pods-Pokemons/Pods-Pokemons.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 				441E228B2C9737200081192C /* APIService */,
 				441E226C2C9730470081192C /* CoreDataService */,
 				441E22652C97270F0081192C /* Cell */,
+				441E22D22C9874EF0081192C /* DecriptionPokemon */,
 				441E22682C9729110081192C /* Pokemon */,
 				441E222F2C97194B0081192C /* Pokemons */,
 				441E22492C97194D0081192C /* PokemonsTests */,
@@ -295,6 +302,40 @@
 			isa = PBXGroup;
 			children = (
 				441E22972C97860B0081192C /* Factory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		441E22D22C9874EF0081192C /* DecriptionPokemon */ = {
+			isa = PBXGroup;
+			children = (
+				441E22D62C9875210081192C /* Factory */,
+				441E22D42C9875110081192C /* ViewModel */,
+				441E22D32C98750B0081192C /* View */,
+			);
+			path = DecriptionPokemon;
+			sourceTree = "<group>";
+		};
+		441E22D32C98750B0081192C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				441E22D72C9875400081192C /* DecriptionPokemonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		441E22D42C9875110081192C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				441E22D92C9875490081192C /* DecriptionPokemonModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		441E22D62C9875210081192C /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				441E22DD2C9875630081192C /* DecriptionPokemonFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -561,6 +602,7 @@
 				441E22D02C9834B30081192C /* ImagePokemon+CoreDataProperties.swift in Sources */,
 				441E22CA2C98003C0081192C /* DescriptionPokemon+CoreDataProperties.swift in Sources */,
 				441E22312C97194B0081192C /* AppDelegate.swift in Sources */,
+				441E22D82C9875400081192C /* DecriptionPokemonView.swift in Sources */,
 				441E22672C9727210081192C /* PokemonsCell.swift in Sources */,
 				441E22882C97366B0081192C /* DecriptionPokemonStruct.swift in Sources */,
 				441E22832C97310D0081192C /* CoreDateService.swift in Sources */,
@@ -570,8 +612,10 @@
 				441E229A2C9786B20081192C /* PokemonsCordinator.swift in Sources */,
 				441E228A2C9736790081192C /* ErrorAPI.swift in Sources */,
 				441E22962C976CE60081192C /* PokemonsViewModel.swift in Sources */,
+				441E22DE2C9875630081192C /* DecriptionPokemonFactory.swift in Sources */,
 				441E22912C9737720081192C /* APIDecription.swift in Sources */,
 				441E22982C97860B0081192C /* Factory.swift in Sources */,
+				441E22DA2C9875490081192C /* DecriptionPokemonModel.swift in Sources */,
 				441E22CC2C982C0E0081192C /* NetworkMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

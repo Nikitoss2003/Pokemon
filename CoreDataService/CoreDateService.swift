@@ -59,13 +59,11 @@ class CoreDataService{
         }
     }
     
-    
-    func saveDescriptionPokemon(with description: DecriptionPokemonResponse) {
+    func saveDescriptionPokemon(with description: DecriptionPokemonResponse?) {
         context.perform { [weak self] in
-            guard let self = self else { return }
-            let existingDescriptions = self.fetchDescription(name: description.name)
+            guard let self = self, let description = description else { return }
             
-            if let existingDescription = existingDescriptions.first {
+            if let existingDescription = self.fetchDescription(name: description.name) {
                 existingDescription.id = Int16(description.id)
                 let typesNames = description.types.map { $0.type.name }.joined(separator: ", ")
                 existingDescription.types = typesNames
@@ -84,18 +82,18 @@ class CoreDataService{
         }
     }
 
-    func fetchDescription(name: String) -> [DescriptionPokemon] {
+
+
+    func fetchDescription(name: String) -> DescriptionPokemon? {
         let fetchRequest: NSFetchRequest<DescriptionPokemon> = DescriptionPokemon.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "name == %@", name)
         
-
-        
         do {
             let descriptions = try context.fetch(fetchRequest)
-            return descriptions
+            return descriptions.first
         } catch {
             print("Failed to fetch descriptions: \(error)")
-            return []
+            return nil
         }
     }
 
@@ -157,6 +155,7 @@ class CoreDataService{
         }
     }
 }
+
 
 
 

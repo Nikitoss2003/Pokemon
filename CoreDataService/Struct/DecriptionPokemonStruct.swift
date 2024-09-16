@@ -1,3 +1,5 @@
+import Foundation
+
 struct DecriptionPokemonResponse: Decodable{
     var height: Int16
     var id: Int
@@ -20,6 +22,7 @@ struct newDecription{
     var height: Int
     var id: Int
     var name: String
-    var weight: Double
+    var weight: Int
     var types: String?
+    var imageData: Data?
 }

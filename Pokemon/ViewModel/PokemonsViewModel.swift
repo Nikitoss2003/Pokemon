@@ -4,6 +4,7 @@ import RxCocoa
 protocol PokemonsViewModelProtocol {
     var pokemons: Observable<[Pokemon]> { get }
     func networkservice()
+    func cordinatorDecription(pokemon: Pokemon)
 }
 
 class PokemonsViewModel: PokemonsViewModelProtocol {
@@ -13,6 +14,7 @@ class PokemonsViewModel: PokemonsViewModelProtocol {
     private let apiNamePokemon: NamePokemonProtocol
     private let apiImage: ImageResultProtocol
     private let apiDescription: ResultDecriptionProtocol
+    private let coordinator: PokemonCoordinator
     private let network = NetworkMonitor()
 
     private let pokemonsSubject = BehaviorSubject<[Pokemon]>(value: [])
@@ -25,11 +27,12 @@ class PokemonsViewModel: PokemonsViewModelProtocol {
     private var totalPokemonsCount = 0
     private var hasMoreData = true
 
-    init(coreDataService: CoreDataService, apiNamePokemon: NamePokemonProtocol, apiImage: ImageResultProtocol, apiDescription: ResultDecriptionProtocol) {
+    init(coreDataService: CoreDataService, apiNamePokemon: NamePokemonProtocol, apiImage: ImageResultProtocol, apiDescription: ResultDecriptionProtocol, coordinator: PokemonCoordinator) {
         self.apiNamePokemon = apiNamePokemon
         self.apiImage = apiImage
         self.apiDescription = apiDescription
         self.coreDataService = coreDataService
+        self.coordinator = coordinator
     }
     
     func networkservice(){
@@ -39,6 +42,10 @@ class PokemonsViewModel: PokemonsViewModelProtocol {
         else {
             loadPokemonsFromCoreData()
         }
+    }
+    
+    func cordinatorDecription(pokemon: Pokemon){
+        coordinator.showPokemonDetail(pokemon: pokemon)
     }
 
   private func apiGettingData() {
