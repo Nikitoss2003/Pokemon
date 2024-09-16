@@ -11,6 +11,7 @@
     </entity>
     <entity name="ImagePokemon" representedClassName="ImagePokemon" syncable="YES">
         <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="descriptionPokemon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DescriptionPokemon" inverseName="imagePokemon" inverseEntity="DescriptionPokemon"/>
     </entity>
     <entity name="UrlPokemon" representedClassName="UrlPokemon" syncable="YES">

@@ -2,7 +2,7 @@
 //  ImagePokemon+CoreDataProperties.swift
 //  Pokemons
 //
-//  Created by НИКИТА ПЕСНЯК on 15.09.24.
+//  Created by НИКИТА ПЕСНЯК on 16.09.24.
 //
 //
 
@@ -17,6 +17,7 @@ extension ImagePokemon {
     }
 
     @NSManaged public var image: Data?
+    @NSManaged public var name: String?
     @NSManaged public var descriptionPokemon: DescriptionPokemon?
 
 }

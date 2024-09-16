@@ -1,28 +1,25 @@
 import Foundation
+import RxSwift
 
-protocol ImageResult {
-    func viewResultImage(url: String, completion: @escaping (Result<Data?, ErrorAPI>) -> Void)
+protocol ImageResultProtocol {
+    func viewResultImage(url: String, name: String) -> Observable<Data>
 }
 
-final class APIImage: ImageResult {
+final class APIImage: ImageResultProtocol {
     
-    func viewResultImage(url: String, completion: @escaping (Result<Data?, ErrorAPI>) -> Void) {
-        let url = URL(string: url)!
+    func viewResultImage(url: String, name: String) -> Observable<Data> {
+        let url = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/\(url).png")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                completion(.failure(.decodingError(error)))
-                return
+        
+        return URLSession.shared.rx.data(request: request)
+            .map { data in
+                CoreDataService.shared.saveImagePokemon(with: data, name: name )
+                return data
             }
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
+            .catch { error in
+                Observable.error(ErrorAPI.decodingError(error))
             }
-            completion(.success(data))
-            CoreDataService.shared.saveImagePokemon(with: data)
-        }
-        task.resume()
     }
 }
