@@ -13,7 +13,6 @@
 		441E22352C97194B0081192C /* PokemonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22342C97194B0081192C /* PokemonsViewController.swift */; };
 		441E223B2C97194B0081192C /* Pokemons.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 441E22392C97194B0081192C /* Pokemons.xcdatamodeld */; };
 		441E223D2C97194D0081192C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 441E223C2C97194D0081192C /* Assets.xcassets */; };
-		441E22402C97194D0081192C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 441E223F2C97194D0081192C /* Base */; };
 		441E224B2C97194D0081192C /* PokemonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E224A2C97194D0081192C /* PokemonsTests.swift */; };
 		441E22552C97194D0081192C /* PokemonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22542C97194D0081192C /* PokemonsUITests.swift */; };
 		441E22572C97194D0081192C /* PokemonsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22562C97194D0081192C /* PokemonsUITestsLaunchTests.swift */; };
@@ -39,6 +38,7 @@
 		441E22D82C9875400081192C /* DecriptionPokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22D72C9875400081192C /* DecriptionPokemonView.swift */; };
 		441E22DA2C9875490081192C /* DecriptionPokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22D92C9875490081192C /* DecriptionPokemonModel.swift */; };
 		441E22DE2C9875630081192C /* DecriptionPokemonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441E22DD2C9875630081192C /* DecriptionPokemonFactory.swift */; };
+		441E22E12C98C7920081192C /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 441E22DF2C98C7920081192C /* localization.strings */; };
 		556AD3DD1E74A9272290AECF /* Pods_Pokemons_PokemonsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD31380AC10FE0C8C78932E /* Pods_Pokemons_PokemonsUITests.framework */; };
 		F5FE47517B8DEC1D14F3B8CD /* Pods_PokemonsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0900BB2D19D902EB0EF435C5 /* Pods_PokemonsTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,7 +70,6 @@
 		441E22342C97194B0081192C /* PokemonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsViewController.swift; sourceTree = "<group>"; };
 		441E223A2C97194B0081192C /* Pokemons.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pokemons.xcdatamodel; sourceTree = "<group>"; };
 		441E223C2C97194D0081192C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		441E223F2C97194D0081192C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		441E22412C97194D0081192C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		441E22462C97194D0081192C /* PokemonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		441E224A2C97194D0081192C /* PokemonsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsTests.swift; sourceTree = "<group>"; };
@@ -99,6 +98,8 @@
 		441E22D72C9875400081192C /* DecriptionPokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecriptionPokemonView.swift; sourceTree = "<group>"; };
 		441E22D92C9875490081192C /* DecriptionPokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecriptionPokemonModel.swift; sourceTree = "<group>"; };
 		441E22DD2C9875630081192C /* DecriptionPokemonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecriptionPokemonFactory.swift; sourceTree = "<group>"; };
+		441E22EB2C995C9B0081192C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/localization.strings; sourceTree = "<group>"; };
+		441E22F32C998A540081192C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
 		6748B3BF8603E1296BC767E3 /* Pods-PokemonsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonsTests.release.xcconfig"; path = "Target Support Files/Pods-PokemonsTests/Pods-PokemonsTests.release.xcconfig"; sourceTree = "<group>"; };
 		74AE40128AE59953C37D6BCE /* Pods-Pokemons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokemons.debug.xcconfig"; path = "Target Support Files/Pods-Pokemons/Pods-Pokemons.debug.xcconfig"; sourceTree = "<group>"; };
 		7F865607940224B469F4198F /* Pods-Pokemons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokemons.release.xcconfig"; path = "Target Support Files/Pods-Pokemons/Pods-Pokemons.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,7 +180,6 @@
 				441E22302C97194B0081192C /* AppDelegate.swift */,
 				441E22322C97194B0081192C /* SceneDelegate.swift */,
 				441E223C2C97194D0081192C /* Assets.xcassets */,
-				441E223E2C97194D0081192C /* LaunchScreen.storyboard */,
 				441E22412C97194D0081192C /* Info.plist */,
 				441E22392C97194B0081192C /* Pokemons.xcdatamodeld */,
 			);
@@ -309,6 +309,7 @@
 		441E22D22C9874EF0081192C /* DecriptionPokemon */ = {
 			isa = PBXGroup;
 			children = (
+				441E22DF2C98C7920081192C /* localization.strings */,
 				441E22D62C9875210081192C /* Factory */,
 				441E22D42C9875110081192C /* ViewModel */,
 				441E22D32C98750B0081192C /* View */,
@@ -439,11 +440,11 @@
 			};
 			buildConfigurationList = 441E22282C97194B0081192C /* Build configuration list for PBXProject "Pokemons" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ru,
 			);
 			mainGroup = 441E22242C97194B0081192C;
 			productRefGroup = 441E222E2C97194B0081192C /* Products */;
@@ -463,7 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				441E223D2C97194D0081192C /* Assets.xcassets in Resources */,
-				441E22402C97194D0081192C /* Base in Resources */,
+				441E22E12C98C7920081192C /* localization.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,12 +654,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		441E223E2C97194D0081192C /* LaunchScreen.storyboard */ = {
+		441E22DF2C98C7920081192C /* localization.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				441E223F2C97194D0081192C /* Base */,
+				441E22EB2C995C9B0081192C /* ru */,
+				441E22F32C998A540081192C /* en */,
 			);
-			name = LaunchScreen.storyboard;
+			name = localization.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -669,6 +671,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -732,6 +735,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -6,6 +6,8 @@ import RxBlocking
 final class PokemonsViewController: UIViewController {
     private let viewModel: PokemonsViewModelProtocol
     private let disposeBag = DisposeBag()
+    let englishButton = UIButton(type: .system)
+    let russianButton = UIButton(type: .system)
 
     private lazy var tableView: UITableView = {
         let table = UITableView()
@@ -26,20 +28,63 @@ final class PokemonsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setupUI()
         viewModel.networkservice()
         setupBindings()
        
     }
 
-    private func setupUI() {
+     func setupUI() {
+        englishButton.setTitle("EN", for: .normal)
+        englishButton.setTitleColor(.blue, for: .normal)
+        englishButton.addTarget(self, action: #selector(selectEnglish), for: .touchUpInside)
+        
+        russianButton.setTitle("RU", for: .normal)
+        russianButton.setTitleColor(.blue, for: .normal)
+        russianButton.addTarget(self, action: #selector(selectRussian), for: .touchUpInside)
+        
+        let views = UIView()
+        views.backgroundColor = .blue
+        views.snp.makeConstraints { make in
+            make.width.equalTo(3)
+            make.height.equalTo(18)
+        }
+        
+        let stackView = UIStackView(arrangedSubviews: [englishButton, views, russianButton])
+        stackView.axis = .horizontal
+        stackView.spacing = 3
+        stackView.alignment = .center
+        stackView.backgroundColor = .white
+        
+        view.addSubview(stackView)
+
+        stackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(100)
+            make.right.equalToSuperview().inset(15)
+        }
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(stackView.snp.bottom).offset(10)
+            make.left.right.bottom.equalToSuperview()
+            
         }
 
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
+
+    
+    @objc private func selectEnglish(){
+        englishButton.setTitleColor(.black, for: .normal)
+        russianButton.setTitleColor(.blue, for: .normal)
+    }
+    @objc private func selectRussian(){
+        russianButton.setTitleColor(.black, for: .normal)
+        englishButton.setTitleColor(.blue, for: .normal)
+    }
+    
+    
 
     private func setupBindings() {
         viewModel.pokemons
@@ -84,3 +129,6 @@ extension PokemonsViewController: UITableViewDelegate {
         return 100
     }
 }
+
+
+

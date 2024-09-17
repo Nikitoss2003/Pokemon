@@ -15,6 +15,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private(set) static var shared: SceneDelegate!
 
+       
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
@@ -23,12 +25,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         SceneDelegate.shared = self
         appContext = AppContext.makeContext()
-
         let viewController = PokemonsFactory.make()
         let navigationController = UINavigationController(rootViewController: viewController)
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+       
+  
     }
 
 

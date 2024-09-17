@@ -55,7 +55,7 @@ final class DecriptionPokemonView: UIViewController{
     
     private lazy var kgLable: UILabel = {
         let label = UILabel()
-        label.text = Constants.kg
+        label.text = NSLocalizedString("kg", comment: "kg")
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 20)
 
@@ -63,7 +63,7 @@ final class DecriptionPokemonView: UIViewController{
     }()
     private lazy var cmLable: UILabel = {
         let lable = UILabel()
-        lable.text = Constants.cm
+        lable.text = NSLocalizedString("cm", comment: "cm")
         lable.textColor = .black
         lable.font = UIFont.boldSystemFont(ofSize: 20)
 
@@ -75,13 +75,6 @@ final class DecriptionPokemonView: UIViewController{
         view.backgroundColor = .white
         setupUI()
        
-    }
-
-    
-    private enum Constants {
-        static let types: String = "Types"
-        static let kg: String = "kg"
-        static let cm: String = "cm"
     }
     
     private func setupUI(){

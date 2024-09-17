@@ -5,6 +5,7 @@ protocol PokemonsViewModelProtocol {
     var pokemons: Observable<[Pokemon]> { get }
     func networkservice()
     func cordinatorDecription(pokemon: Pokemon)
+    func setLanguage(_ languageCode: String)
 }
 
 class PokemonsViewModel: PokemonsViewModelProtocol {
@@ -123,6 +124,9 @@ class PokemonsViewModel: PokemonsViewModelProtocol {
             })
             .disposed(by: disposeBag)
     }
+    
+   
+
 
 
 }
